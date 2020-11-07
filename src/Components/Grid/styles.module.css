@@ -1,7 +1,10 @@
 .grid {
-	/* min-width: -webkit-fill-available; */
 	display: grid;
 	gap: 1rem;
+}
+
+.fillAvailableSpace {
+	min-width: -webkit-fill-available;
 }
 
 /* https://every-layout.dev/layouts/grid/ */

@@ -3,9 +3,21 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styles from './styles.module.css';
 
-export default function Grid({ children, className, ...rest }) {
+export default function Grid({
+  children,
+  className,
+  fullWidth = false,
+  ...rest
+}) {
   return (
-    <div className={cx(styles.grid, className)} {...rest}>
+    <div
+      className={cx(
+        styles.grid,
+        { [styles.fillAvailableSpace]: fullWidth },
+        className
+      )}
+      {...rest}
+    >
       {children}
     </div>
   );
@@ -14,4 +26,5 @@ export default function Grid({ children, className, ...rest }) {
 Grid.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  fullWidth: PropTypes.bool,
 };
