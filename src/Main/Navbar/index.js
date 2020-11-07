@@ -1,12 +1,12 @@
 import React from 'react';
+import { Button } from '../../BsComponents';
 // import PropTypes from 'prop-types'
 
 const Navbar = () => (
   <nav id="menu" className="navbar navbar-default navbar-fixed-top">
     <div className="container">
       <div className="navbar-header">
-        <button
-          type="button"
+        <Button
           className="navbar-toggle collapsed"
           data-toggle="collapse"
           data-target="#bs-example-navbar-collapse-1"
@@ -14,7 +14,7 @@ const Navbar = () => (
           <span className="sr-only">Toggle navigation</span>
           <span className="icon-bar" /> <span className="icon-bar" />
           <span className="icon-bar" />
-        </button>
+        </Button>
         <a className="navbar-brand page-scroll" href="#page-top">
           React Landing Page
         </a>

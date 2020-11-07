@@ -3,9 +3,18 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styles from './styles.module.css';
 
-export default function Button({ children, className, onClick = () => {}, type = 'primary' }) {
+export default function Button({
+  children,
+  className,
+  onClick = () => {},
+  type = 'primary',
+}) {
   return (
-    <button type="button" className={cx(styles.button, styles[type], className)} onClick={onClick}>
+    <button
+      type="button"
+      className={cx(styles.button, styles[type], className)}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
