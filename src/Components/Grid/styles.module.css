@@ -1,0 +1,12 @@
+.grid {
+	/* min-width: -webkit-fill-available; */
+	display: grid;
+	gap: 1rem;
+}
+
+/* https://every-layout.dev/layouts/grid/ */
+@supports (width: min(250px, 100%)) {
+	.grid {
+		grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+	}
+}

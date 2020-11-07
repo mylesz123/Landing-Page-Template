@@ -1,0 +1,27 @@
+.accordionContainer {
+	height: fit-content;
+	align-content: start;
+	background: #eeeeee;
+	overflow: hidden;
+}
+
+.accordionContainer > summary {
+	font-weight: bold;
+	align-content: center;
+}
+
+.expand {
+	padding: 0;
+	max-width: none;
+	height: fit-content;
+}
+
+.summaryWrapper {
+	grid-template-columns: 5fr 1fr;
+}
+
+@media only screen and (max-width: 420px) {
+	.summaryWrapper {
+		grid-template-columns: none;
+	}
+}

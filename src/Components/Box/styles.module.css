@@ -1,0 +1,31 @@
+/* large */
+
+.box {
+	display: block;
+	padding: 0.1rem;
+	/* ↓ For high contrast mode */
+	outline: var(--border-thin) solid transparent;
+	outline-offset: calc(var(--border-thin) * -1);
+}
+
+.box * {
+	display: flex;
+	flex: auto;
+	flex-wrap: wrap;
+	overflow-wrap: anywhere;
+}
+
+.large * {
+	padding: 0.8rem;
+	margin: 1.4rem;
+}
+
+.medium * {
+	padding: 0.4rem;
+	margin: 0.4rem;
+}
+
+.small * {
+	padding: 0.1rem;
+	margin: 0.4rem;
+}

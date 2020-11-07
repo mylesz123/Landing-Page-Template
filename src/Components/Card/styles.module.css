@@ -1,0 +1,32 @@
+.card {
+	padding: 1.5rem;
+	background: #eeeeee;
+	border-radius: 30px;
+	overflow: hidden;
+	padding-bottom: 2em;
+}
+
+.card h3 {
+	margin: 0 0 1rem 0;
+	font-size: 1.25rem;
+}
+
+.card p {
+	margin: 0;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+@media only screen and (max-width: 470px) {
+	.card h3 {
+		font-size: 0.9rem;
+	}
+
+	.card h4 {
+		font-size: 0.8rem;
+	}
+
+	.card p {
+		font-size: 0.75rem;
+	}
+}
