@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import cx from 'classnames';
 import ShowCase from '../Showcase';
 
 import { FlexLayout, Grid } from '../../Components';
+
+import styles from './styles.index.css';
 
 const Team = ({ data = {} }) => (
   <ShowCase
@@ -17,12 +20,7 @@ const Team = ({ data = {} }) => (
       {data
         ? data.map((d, i) => (
             <div key={`${d.name}-${i}`}>
-              <Grid
-                className="thumbnail"
-                style={{
-                  gridTemplateColumns: 'auto',
-                }}
-              >
+              <Grid className={cx('thumbnail', styles.grid)}>
                 <img src={d.img} alt="..." className="team-img" />
                 <div className="caption">
                   <h4>{d.name}</h4>
