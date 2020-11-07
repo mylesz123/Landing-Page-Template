@@ -34,7 +34,11 @@ export default function App() {
           <Gallery />
           <Testimonials data={landingPageData.testimonials} />
           <Team data={landingPageData.team} />
-          <Contact data={landingPageData.contact} />
+          <Contact
+            data={landingPageData.contact}
+            description="Please fill out the form below to send us an email and we will get
+          back to you as soon as possible."
+          />
         </>
       )}
       <Footer />
