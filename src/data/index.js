@@ -1,26 +1,26 @@
 export const initialData = {
-  Header: {
+  header: {
     title: 'We are a Landing Page',
     paragraph:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo nibh ante facilisis bibendum.',
   },
-  About: {
+  about: {
     paragraph:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    Why: [
+    why: [
       'Lorem ipsum dolor',
       'Tempor incididunt',
       'Lorem ipsum dolor',
       'Incididunt ut labore',
     ],
-    Why2: [
+    why2: [
       'Aliquip ex ea commodo',
       'Lorem ipsum dolor',
       'Exercitation ullamco',
       'Lorem ipsum dolor',
     ],
   },
-  Services: [
+  services: [
     {
       icon: 'fa fa-wordpress',
       name: 'Lorem ipsum dolor',
@@ -58,7 +58,7 @@ export const initialData = {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.',
     },
   ],
-  Testimonials: [
+  testimonials: [
     {
       img: 'img/testimonials/01.jpg',
       text:
@@ -96,7 +96,7 @@ export const initialData = {
       name: 'Johnathan Doe',
     },
   ],
-  Team: [
+  team: [
     {
       img: 'img/team/01.jpg',
       name: 'John Doe',
@@ -118,7 +118,7 @@ export const initialData = {
       job: 'Project Manager',
     },
   ],
-  Contact: {
+  contact: {
     address: '4321 California St, San Francisco, CA 12345 ',
     phone: '+1 123 456 1234',
     email: 'info@company.com',
@@ -126,7 +126,7 @@ export const initialData = {
     twitter: 'twitter.com',
     youtube: 'youtube.com',
   },
-  Features: [
+  features: [
     {
       icon: 'fa fa-comments-o',
       title: 'Lorem ipsum',

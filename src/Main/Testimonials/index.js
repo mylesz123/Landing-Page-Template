@@ -1,31 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import ShowCase from '../Showcase';
+import { Center } from '../../Components';
+
 const Testimonials = ({ data = {} }) => (
-  <div id="testimonials">
-    <div className="container">
-      <div className="section-title text-center">
-        <h2>What our clients say</h2>
-      </div>
-      <div className="row">
-        {data
-          ? data.map((d, i) => (
-              <div key={`${d.name}-${i}`} className="col-md-4">
-                <div className="testimonial">
-                  <div className="testimonial-image">
-                    <img src={d.img} alt="" />
-                  </div>
-                  <div className="testimonial-content">
-                    <p>"{d.text}"</p>
-                    <div className="testimonial-meta"> - {d.name} </div>
-                  </div>
-                </div>
+  <ShowCase id="testimonials" title="What our clients say">
+    {data
+      ? data.map((d, i) => (
+          <Center key={`${d.name}-${i}`}>
+            <div className="testimonial">
+              <div className="testimonial-image">
+                <img src={d.img} alt="" />
               </div>
-            ))
-          : 'loading'}
-      </div>
-    </div>
-  </div>
+              <div className="testimonial-content">
+                <p>"{d.text}"</p>
+                <div className="testimonial-meta"> - {d.name} </div>
+              </div>
+            </div>
+          </Center>
+        ))
+      : 'loading'}
+  </ShowCase>
 );
 
 Testimonials.propTypes = {

@@ -1,28 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Features({ data = {} }) {
-  return (
-    <div id="features" className="text-center">
-      <div className="container">
-        <div className="col-md-10 col-md-offset-1 section-title">
-          <h2>Features</h2>
-        </div>
-        <div className="row">
-          {data
-            ? data.map((d, i) => (
-                <div key={`${d.title}-${i}`} className="col-xs-6 col-md-3">
-                  <i className={d.icon} />
-                  <h3>{d.title}</h3>
-                  <p>{d.text}</p>
-                </div>
-              ))
-            : 'Loading...'}
-        </div>
-      </div>
-    </div>
-  );
-}
+import ShowCase from '../Showcase';
+
+import { Center } from '../../Components';
+
+const Features = ({ data = [] }) => (
+  <ShowCase id="features" title="Features">
+    {data
+      ? data.map((d, i) => (
+          <Center key={`${d.title}-${i}`}>
+            <i className={d.icon} />
+            <h3>{d.title}</h3>
+            <p>{d.text}</p>
+          </Center>
+        ))
+      : 'Loading...'}
+  </ShowCase>
+);
 
 Features.propTypes = {
   data: PropTypes.array,
