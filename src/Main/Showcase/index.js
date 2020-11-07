@@ -8,6 +8,7 @@ const ShowCase = ({
   id = '',
   children,
   description,
+  fullWidth = false,
   title = 'Title',
   shouldCenter = true,
 }) => (
@@ -18,10 +19,10 @@ const ShowCase = ({
     </div>
     {shouldCenter ? (
       <Center totallyCentered>
-        <Grid>{children || 'loading...'}</Grid>
+        <Grid {...{ fullWidth }}>{children}</Grid>
       </Center>
     ) : (
-      <Grid>{children || 'loading...'}</Grid>
+      <Grid>{children}</Grid>
     )}
   </Center>
 );
@@ -40,6 +41,7 @@ const ShowCase = ({
 ShowCase.propTypes = {
   children: PropTypes.node,
   description: PropTypes.string,
+  fullWidth: PropTypes.bool,
   id: PropTypes.string,
   shouldCenter: PropTypes.bool,
   title: PropTypes.string,
