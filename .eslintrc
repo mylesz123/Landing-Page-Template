@@ -1,0 +1,8 @@
+{
+  "extends": [
+    "wesbos"
+  ],
+  "rules":{
+    "prettier/prettier": "warn"
+  }
+}
