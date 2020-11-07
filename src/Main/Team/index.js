@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import ShowCase from '../Showcase';
 
-import { Center } from '../../Components';
+import { FlexLayout, Grid } from '../../Components';
 
 const Team = ({ data = {} }) => (
   <ShowCase
@@ -13,19 +13,26 @@ const Team = ({ data = {} }) => (
     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
           dapibus leonec."
   >
-    {data
-      ? data.map((d, i) => (
-          <Center key={`${d.name}-${i}`} className="team">
-            <div className="thumbnail">
-              <img src={d.img} alt="..." className="team-img" />
-              <div className="caption">
-                <h4>{d.name}</h4>
-                <p>{d.job}</p>
-              </div>
+    <FlexLayout>
+      {data
+        ? data.map((d, i) => (
+            <div key={`${d.name}-${i}`}>
+              <Grid
+                className="thumbnail"
+                style={{
+                  gridTemplateColumns: 'auto',
+                }}
+              >
+                <img src={d.img} alt="..." className="team-img" />
+                <div className="caption">
+                  <h4>{d.name}</h4>
+                  <p>{d.job}</p>
+                </div>
+              </Grid>
             </div>
-          </Center>
-        ))
-      : 'loading'}
+          ))
+        : 'loading'}
+    </FlexLayout>
   </ShowCase>
 );
 
