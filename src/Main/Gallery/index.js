@@ -1,24 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import cx from 'classnames';
 import ShowCase from '../Showcase';
-import { Center } from '../../Components';
+import { FlexLayout } from '../../Components';
+import styles from './styles.module.css';
 
 const Picture = ({ item }) => {
   const { href, src, description, title } = item;
   return (
-    <div className="col-sm-6 col-md-4 col-lg-4">
-      <div className="portfolio-item">
-        <div className="hover-bg">
-          <a href={href} title={description} data-lightbox-gallery="gallery1">
-            <div className="hover-text">
-              <h4>{title}</h4>
-            </div>
-            <img src={src} className="img-responsive" alt={description} />
-          </a>
-        </div>
+    <FlexLayout className={cx('portfolio-item', styles.portfolioItem)}>
+      <div className="hover-bg">
+        <a href={href} title={description} data-lightbox-gallery="gallery1">
+          <div className="hover-text">
+            <h4>{title}</h4>
+          </div>
+          <img src={src} className="img-responsive" alt={description} />
+        </a>
       </div>
-    </div>
+    </FlexLayout>
   );
 };
 
@@ -99,16 +99,15 @@ const items = [
 
 const Gallery = () => (
   <ShowCase
+    fullWidth
     id="portfolio"
     title="Gallery"
     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
           dapibus leonec."
   >
-    <div className="portfolio-items">
-      {items.map((item) => (
-        <Picture {...{ key: item.id, item }} />
-      ))}
-    </div>
+    {items.map((item) => (
+      <Picture {...{ key: item.id, item }} />
+    ))}
   </ShowCase>
 );
 
