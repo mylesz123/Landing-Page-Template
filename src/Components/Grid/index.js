@@ -7,6 +7,7 @@ export default function Grid({
   children,
   className,
   fullWidth = false,
+  gap = 1,
   ...rest
 }) {
   return (
@@ -16,6 +17,9 @@ export default function Grid({
         { [styles.fillAvailableSpace]: fullWidth },
         className
       )}
+      style={{
+        gap: `${gap}rem`,
+      }}
       {...rest}
     >
       {children}
@@ -27,4 +31,5 @@ Grid.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   fullWidth: PropTypes.bool,
+  gap: PropTypes.number,
 };

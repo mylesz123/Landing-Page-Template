@@ -7,12 +7,17 @@ const Container = ({
   className,
   hasRow = true,
   showRowOnly = false,
+  ...rest
 }) => {
   if (showRowOnly) {
-    return <div className="row">{children}</div>;
+    return (
+      <div className="row" {...rest}>
+        {children}
+      </div>
+    );
   }
   return (
-    <div className={cx('container', className)}>
+    <div className={cx('container', className)} {...rest}>
       {hasRow ? <div className="row">{children}</div> : children}
     </div>
   );
