@@ -1,0 +1,7 @@
+.flex {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	padding-left: 2em;
+	padding-right: 2em;
+}
