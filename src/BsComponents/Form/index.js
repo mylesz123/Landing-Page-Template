@@ -3,81 +3,29 @@ import PropTypes from 'prop-types';
 
 import Button from '../Button';
 import { Grid } from '../../Components';
+import { Input, TextArea } from './Components';
 
-const FormComponent = ({ name, error, type, ...rest }) => {
-  const joinString = (value) => value.toLowerCase().split(' ').join('');
-  return (
-    <div className="form-group">
-      <input
-        type={type || joinString(name)}
-        id={joinString(name)}
-        className="form-control"
-        placeholder={name}
-        {...rest}
-        // required
-      />
-      {error ? <p className="help-block text-danger" /> : null}
-    </div>
-  );
-};
+import styles from './styles.module.css';
 
-FormComponent.propTypes = {
-  error: PropTypes.bool,
-  name: PropTypes.string,
-  type: PropTypes.string,
-};
+import { useFormSetup } from './hooks';
 
 const Form = ({ id = 'contactForm', name = 'sentMessage', ...rest }) => {
-  // update this later with the code from KCD form validation
-  const onSubmit = (e) => {
-    e.preventDefault();
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  const [onChange, handleSubmit, response] = useFormSetup({
+    name: '',
+    email: '',
+    message: '',
+  });
 
   return (
     <form {...{ id, name }} onSubmit={handleSubmit}>
       <Grid>
-        <div className="form-group">
-          <input
-            type="text"
-            id="name"
-            className="form-control"
-            placeholder="Name"
-            required="required"
-          />
-          <p className="help-block text-danger" />
-        </div>
-        <div className="form-group">
-          <input
-            type="email"
-            id="email"
-            className="form-control"
-            placeholder="Email"
-            required="required"
-          />
-          <p className="help-block text-danger" />
-        </div>
+        <Input id="Name" type="text" onChange={onChange} />
+        <Input id="Email" type="email" onChange={onChange} />
       </Grid>
-      <div className="form-group">
-        <textarea
-          name="message"
-          id="message"
-          className="form-control"
-          rows="4"
-          placeholder="Message"
-          required
-        />
-        <p className="help-block text-danger" />
-      </div>
-      <div id="success" />
-      <Button
-        type="submit"
-        className="btn btn-custom btn-lg"
-        onClick={onSubmit}
-      >
+      <TextArea id="Message" onChange={onChange} />
+      {response ? <span className={styles.response}>{response}</span> : null}
+
+      <Button type="submit" className="btn btn-custom btn-lg">
         Send Message
       </Button>
     </form>
