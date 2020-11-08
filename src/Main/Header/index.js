@@ -1,42 +1,46 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Container } from '../../BsComponents';
-import { Center } from '../../Components';
+import cx from 'classnames';
+import { Button } from '../../BsComponents';
+import { Center, FlexLayout, Grid } from '../../Components';
+import styles from './styles.module.css';
 
-const Header = ({ data = {} }) => (
+const Header = ({ title = 'Landing Page', paragraph, nextSectionName }) => (
   <header id="header">
     <div className="intro">
-      <div className="overlay">
-        <Container>
-          <Center className="intro-text">
-            <h1>{data ? data.title : 'Loading'}</h1>
-            <p>{data ? data.paragraph : 'Loading'}</p>
-            <a href="#features" className="btn btn-custom btn-lg page-scroll">
+      <FlexLayout className="overlay">
+        <Grid className={cx('intro-text', styles.grid)}>
+          <h1>{title}</h1>
+          <p>{paragraph || null}</p>
+          <Center>
+            <Button
+              href={`#${nextSectionName}`}
+              className="btn btn-custom btn-lg page-scroll"
+            >
               Learn More
-            </a>
+            </Button>
           </Center>
-        </Container>
-      </div>
+        </Grid>
+      </FlexLayout>
     </div>
   </header>
 );
-// const Header = ({ data = {} }) => (
+// const Header = ({ title = 'Landing Page', paragraph, nextSectionName }) => (
 //   <header id="header">
 //     <div className="intro">
 //       <div className="overlay">
 //         <Container>
-//           {/* type, size, classname */}
-//           <div className="col-md-8 col-md-offset-2 intro-text">
-//             <h1>
-//               {data ? data.title : 'Loading'}
-//               <span />
-//             </h1>
-//             <p>{data ? data.paragraph : 'Loading'}</p>
-//             <a href="#features" className="btn btn-custom btn-lg page-scroll">
+//           <Center className="intro-text">
+//             <h1>{title}</h1>
+//             <p>{paragraph || null}</p>
+//             <Button
+//               href={`#${nextSectionName}`}
+//               className="btn btn-custom btn-lg page-scroll"
+//             >
 //               Learn More
-//             </a>
-//           </div>
+//             </Button>
+//           </Center>
 //         </Container>
 //       </div>
 //     </div>
@@ -44,7 +48,9 @@ const Header = ({ data = {} }) => (
 // );
 
 Header.propTypes = {
-  data: PropTypes.object,
+  nextSectionName: PropTypes.string,
+  paragraph: PropTypes.string,
+  title: PropTypes.string,
 };
 
 export default Header;

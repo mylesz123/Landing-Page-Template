@@ -1,20 +1,17 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import Container from '../Container';
+import { Center, Grid } from '../../Components';
 
 const Footer = () => (
-  <div id="footer">
-    <Container className="text-center" hasRow={false}>
+  <Grid id="footer">
+    <Center className="text-center" totallyCentered>
       <p>
-        &copy; 2020 Issaaf Kattan React Land Page Template. Design by
+        &copy; Landing Page Template. Design by{' '}
         <a href="http://www.templatewire.com" rel="nofollow">
           TemplateWire
         </a>
       </p>
-    </Container>
-  </div>
+    </Center>
+  </Grid>
 );
-
-Footer.propTypes = {};
 
 export default Footer;

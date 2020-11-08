@@ -27,7 +27,11 @@ export default function App() {
       <Navbar />
       {landingPageData && (
         <>
-          <Header data={landingPageData.header} />
+          <Header
+            title="Landing Page"
+            paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo nibh ante facilisis bibendum."
+            nextSectionName="features"
+          />
           <Features data={landingPageData.features} />
           <About data={landingPageData.about} />
           <Services data={landingPageData.services} />

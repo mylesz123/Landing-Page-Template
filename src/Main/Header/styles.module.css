@@ -1,0 +1,7 @@
+.header {
+	padding: 2em;
+}
+
+.grid {
+	grid-template-columns: auto;
+}
