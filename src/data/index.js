@@ -1,10 +1,5 @@
 export const initialData = {
-  header: {
-    title: 'We are a Landing Page',
-    paragraph:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo nibh ante facilisis bibendum.',
-  },
-  about: {
+  About: {
     paragraph:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     why: [
@@ -20,7 +15,7 @@ export const initialData = {
       'Lorem ipsum dolor',
     ],
   },
-  services: [
+  Services: [
     {
       icon: 'fa fa-wordpress',
       name: 'Lorem ipsum dolor',
@@ -58,7 +53,7 @@ export const initialData = {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.',
     },
   ],
-  testimonials: [
+  Testimonials: [
     {
       img: 'img/testimonials/01.jpg',
       text:
@@ -96,7 +91,7 @@ export const initialData = {
       name: 'Johnathan Doe',
     },
   ],
-  team: [
+  Team: [
     {
       img: 'img/team/01.jpg',
       name: 'John Doe',
@@ -118,7 +113,7 @@ export const initialData = {
       job: 'Project Manager',
     },
   ],
-  contact: {
+  Contact: {
     address: '4321 California St, San Francisco, CA 12345 ',
     phone: '+1 123 456 1234',
     email: 'info@company.com',
@@ -126,7 +121,7 @@ export const initialData = {
     twitter: 'twitter.com',
     youtube: 'youtube.com',
   },
-  features: [
+  Features: [
     {
       icon: 'fa fa-comments-o',
       title: 'Lorem ipsum',

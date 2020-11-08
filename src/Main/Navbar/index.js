@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button } from '../../BsComponents';
-// import PropTypes from 'prop-types'
 
-const Navbar = () => (
+const Navbar = ({ links, title }) => (
   <nav id="menu" className="navbar navbar-default navbar-fixed-top">
     <div className="container">
       <div className="navbar-header">
@@ -16,7 +16,7 @@ const Navbar = () => (
           <span className="icon-bar" />
         </Button>
         <a className="navbar-brand page-scroll" href="#page-top">
-          React Landing Page
+          {title}
         </a>
       </div>
 
@@ -25,47 +25,22 @@ const Navbar = () => (
         id="bs-example-navbar-collapse-1"
       >
         <ul className="nav navbar-nav navbar-right">
-          <li>
-            <a href="#features" className="page-scroll">
-              Features
-            </a>
-          </li>
-          <li>
-            <a href="#about" className="page-scroll">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#services" className="page-scroll">
-              Services
-            </a>
-          </li>
-          <li>
-            <a href="#portfolio" className="page-scroll">
-              Gallery
-            </a>
-          </li>
-          <li>
-            <a href="#testimonials" className="page-scroll">
-              Testimonials
-            </a>
-          </li>
-          <li>
-            <a href="#team" className="page-scroll">
-              Team
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="page-scroll">
-              Contact
-            </a>
-          </li>
+          {links.map((link) => (
+            <li key={link}>
+              <a href={`#${link.toLowerCase()}`} className="page-scroll">
+                {link}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
   </nav>
 );
 
-// Navbar.propTypes = {}
+Navbar.propTypes = {
+  links: PropTypes.array,
+  title: PropTypes.string,
+};
 
 export default Navbar;
